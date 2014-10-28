@@ -1,5 +1,5 @@
-NodeStarterJS
-=============
+NodeStarterJS workshop
+======================
 
 you will find here all the material of our Node.JS workshop for beginners
 
