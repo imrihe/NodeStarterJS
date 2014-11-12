@@ -10,7 +10,7 @@ var tOb = function(doc){
 }
 
 var imageScheme = new Schema({
-    name: {type: String, unique: true},
+    name: {type: String, unique: true,required: true},
     freeText: {type: String},
     title: {type: String},
     creationDate: Date,

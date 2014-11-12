@@ -10,10 +10,14 @@ var ensureAuthenticated = require('../models/auth.js').ensureAuthenticated;
 router.post('/upload', multipartMiddleware, function(req, res) {
   var fileName  = (req.files[0] && req.files[0].path.split('/').pop())
                   || (req.files['fileName'] && req.files['fileName'].path.split('/').pop())
-  imageModel.createImage(fileName,function(err,result){
-    if (err) res.send({err: err})
-    else res.send({result: true, content: result, fileName: fileName});
-  })
+  if (!fileName){
+    res.send({err: "You should add an image if you want to upload one"});
+  }else{
+    imageModel.createImage(fileName,function(err,result){
+      if (err) res.send({err: err})
+      else res.send({result: true, content: result, fileName: fileName});
+    })
+  }
   
 });
 
