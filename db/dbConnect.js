@@ -14,7 +14,8 @@ var mongoose = require('mongoose');
         },
         logger: console
     };
-    dbURI ='mongodb://'+conf.db.dbhost+':'+conf.db.dbport+'/'+conf.db.dbname;
+
+var dbURI ='mongodb://'+conf.db.dbhost+':'+conf.db.dbport+'/'+conf.db.dbname;
     
     
     
