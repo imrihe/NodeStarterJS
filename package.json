@@ -4,6 +4,10 @@
   "description": "An exmaple server to demonstrate the basics of Node and Express",
   "main": "app.js",
   "repository": "",
+  "scripts": {
+    "builddir": "mkdir public routes uploads uploads/userImages views models || echo '\nOK.. folders are ready - now type \"npm start\" '",
+    "start" : "node app.js"
+  },
   "author": "Imri Heppner <imri@payboxapp.com>",
   "dependencies": {
     "async": "~0.2.8",
