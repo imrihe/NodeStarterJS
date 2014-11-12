@@ -10,6 +10,8 @@ keep following!
 imri
 
 
+follow this link in order to see the instructions and agenda: http://www.payboxapp.com/workshop/
+
 Instructions:
 
 git clone https://github.com/imrihe/NodeStarterJS.git
