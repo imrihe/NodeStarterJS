@@ -9,4 +9,9 @@ keep following!
 
 imri
 
+
+Instructions:
+git clone https://github.com/imrihe/NodeStarterJS.git
+git checkout XXX  (master is the full project)
+
 contact me if u have any questions: imri@payboxapp.com
