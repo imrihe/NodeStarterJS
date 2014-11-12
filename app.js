@@ -21,19 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/userImages/:name', function(req, res,next) { //use this middleware in order to secure static files!
-    var fileName = req.param('name');
-    //authentication goes here:
-    //That way you can add authentication to users trying to get their images
-    //we didn't implement this method in this workshop
-    next();
-});
 
-app.use(express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'uploads')));  //TODO: add authentication to this static content..
 
 app.use('/', routes);
 app.use('/images', images);
-app.use('/users', users);
 
 
 // catch 404 and forward to error handler
