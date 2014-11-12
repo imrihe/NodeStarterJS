@@ -5,7 +5,6 @@ var bodyParser =    require('body-parser');
 
 global.conf =       require('./conf.js');
 var routes =        require('./routes/index');
-var users =         require('./routes/users');
 var images =         require('./routes/images');
 
 var app = express();

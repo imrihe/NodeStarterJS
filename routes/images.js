@@ -30,50 +30,12 @@ router.post('/setMetaData',function(req, res) {
 
 
 
-router.post('/searchImagesByText', function(req, res) {
-  imageModel.searchImagesByFreeText(req.param('text'), null, function(err,result){
-    if (err) res.send({err: err});
-    else res.send({result: true, content: result});
-  })
-  
-});
-
 router.post('/getImageData', function(req, res) {
   imageModel.getImageData(req.param('name'), function(err,result){
     if (err) res.send({err: err});
     else res.send({result: true, content: result});
   })
   
-});
-
-
-router.post('/listUserImages', function(req, res) {
-  imageModel.listUserImages(req.param('uId'), function(err,result){
-    if (err) res.send({err: err});
-    else res.send({result: true, content: result});
-  })
-});
-
-
-router.post('/searchImagesByKeywords', function(req, res) {
-  imageModel.searchImagesByKeywords(req.param('keywords'),req.param('uId') || null, function(err,result){
-    if (err) res.send({err: err});
-    else res.send({result: true, content: result});
-  })
-});
-
-router.post('/searchImagesByCategory', function(req, res) {
-  imageModel.searchImagesByCategory(req.param('category'), req.param('uId') ||null, function(err,result){
-    if (err) res.send({err: err});
-    else res.send({result: true, content: result});
-  })
-});
-
-router.post('/searchImagesByTitle',  function(req, res) {
-  imageModel.searchImagesByTitle(req.param('title'), req.param('uId') ||null, function(err,result){
-    if (err) res.send({err: err});
-    else res.send({result: true, content: result});
-  })
 });
 
 

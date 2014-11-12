@@ -15,7 +15,9 @@ var imageScheme = new Schema({
     title: {type: String},
     creationDate: Date,
     uId: Object,
-},{strict: false})
+},
+    {strict: false} //strict false means that you can add "on the fly" fields on any type
+)
 
 
 imageScheme.index({ freeText: 'text',title: 'text',keywords: 1});
