@@ -96,98 +96,11 @@ function setImageMetDataByName(name,data,cb){
         })
 }
 
-/**get image data by the creating user id'
- * @uId String, id of the user
- * @param: cb Function(err,result)
- * */
-function getImagesByUserID(uId,cb){
-    model.find({uId : uId},function(err,result){
-        if (err) cb({err : "couldn't get images from DB", mongoError: err})
-        else cb(err,tOb(result));
-    })
-}
 
-
-/**search the db by given set of keywords (array of strings or a string)'
- * @keywordsArray Array || String, keywords to search by
- * @param: cb Function(err,result)
- * */
-function getImagesByKeywords(keywordsArray,uId,cb){
-    if (!Array.isArray(keywordsArray))  keywordsArray = [keywordsArray] //cast to array
-    var query = {keywords : {'$in': keywordsArray}}
-    if (uId) query.uId = uId
-    model.find(query, 
-        function(err,result){
-            if (err) cb({err: "couldn't get images from DB", mongoError: err})
-            else cb(err,tOb(result));
-        })
-}
-
-
-
-
-/**get images of given category'
- * @category Array || String, keywords to search by
- * @uId String, filter the search results - show only data created by the given uId (send null if not needed to filter)
- * @param: cb Function(err,result)
- * */
-function getImagesByCategory(category,uId,cb){
-    var query = {
-     category: category   
-    }
-    if (uId) query.uId = uId
-    model.find(query,    
-        function(err,result){
-            if (err) cb({err: "couldn't get images from DB", mongoError: err})
-            else cb(err,tOb(result));
-        })
-}
-
-/**get images with the given title (by substring)'
- * @category Array || String, keywords to search by
- * @uId String, filter the search results - show only data created by the given uId (send null if not needed to filter)
- * @param: cb Function(err,result)
- * */
-function getImagesByTitle(title,uId,cb){
-    var query = {
-     title: new RegExp(".*"+title+".*")
-    }
-    if (uId) query.uId = uId
-    model.find(query,    
-        function(err,result){
-            if (err) cb({err: "couldn't get images from DB", mongoError: err})
-            else cb(err,tOb(result));
-        })
-}
-
-
-/**search the db by search string (will search title and freeText. search only the images created by the given userId'
- * @text String a text string (@see http://docs.mongodb.org/manual/reference/operator/query/text/#op._S_text)
- * @uId String, filter the search results - show only data created by the given uId
- * @param: cb Function(err,result)
- * */
-function searchUserImagesByText(text,uId,cb){
-    var query = {
-  
-            '$text': {'$search': text},
-      
-    }
-    if (uId) query.uId = uId;
-    model.find(query,
-    function(err,result){
-         if (err) cb({err: "couldn't get images from DB", mongoError: err})
-        else cb(err,tOb(result));
-    })
-}
 
 module.exports = {
     addImage : addImage,
     getImageDataByName : getImageDataByName,
     setImageMetDataById : setImageMetDataById,
     setImageMetDataByName: setImageMetDataByName,
-    getImagesByUserID : getImagesByUserID,
-    getImagesByKeywords : getImagesByKeywords,
-    searchUserImagesByText : searchUserImagesByText,
-    getImagesByCategory: getImagesByCategory,
-    getImagesByTitle : getImagesByTitle
 }
