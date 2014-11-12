@@ -12,7 +12,10 @@ app.set('view engine', 'jade');
 
 
 
-//TODO: add your content here
+//TODO: add your middlewares here
+
+
+//TODO: add your routres  here
 
 
 
@@ -20,9 +23,7 @@ app.set('view engine', 'jade');
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + server.address().port);
-});
 
+//TODO: here you should set the server to listen on port app.get('port') and log once the server is listenning 
 
 
