@@ -2,7 +2,7 @@ var configs = {
     host: '',
     port: 8080,
     ssl: false,
-    
+    imagesDir: 'uploads/userImages',
     db: {
         dbname: 'picndoc',
         dbhost: 'localhost',
