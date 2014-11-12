@@ -5,6 +5,10 @@
   "main": "app.js",
   "repository": "",
   "author": "Imri Heppner <imri@payboxapp.com>",
+   "scripts": {
+    "builddir": "mkdir public routes uploads uploads/userImages views models || echo '\nOK.. folders are ready - now type \"npm start\" '",
+    "start" : "node app.js"
+  },
   "dependencies": {
     "async": "~0.2.8",
     "body-parser": "^1.9.2",
