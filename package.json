@@ -1,0 +1,19 @@
+{
+  "name": "picNdic",
+  "version": "0.0.0",
+  "description": "An exmaple server to demonstrate the basics of Node and Express",
+  "main": "app.js",
+  "repository": "",
+  "author": "Imri Heppner <imri@payboxapp.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.9.2",
+    "connect-multiparty": "^1.2.5",
+    "debug": "^2.1.0",
+    "express": "*",
+    "jade": "^1.7.0",
+    "mongoose": "^3.8.19",
+    "morgan": "^1.5.0",
+    "underscore": "^1.7.0"
+  }
+}
